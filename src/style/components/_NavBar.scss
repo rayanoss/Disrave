@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import '../settings';
+
+.navbar{
+    display: flex;
+    width: 95%;
+    margin: 20px 0;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .navbar_title{
+        text-transform: uppercase;
+        color: white;
+        font-size: 25px;
+        font-family: 'Acme', sans-serif;
+    }
+
+    .navbar_links{
+            display: flex;
+            list-style: none;
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+
+        .link{
+            margin: 0px 10px;
+            font-family: 'Poppins', sans-serif;
+
+            a{
+                color: white;
+            }
+        }
+    }
+}

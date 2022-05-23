@@ -1,0 +1,40 @@
+.features_section{
+    background: rgb(255, 255, 255);
+    .features_container{
+        width: 95%;
+        padding-top: 50px;
+        display: flex;
+        align-items: center;
+        margin: auto;
+
+        .features{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            color: #23272A;
+            }
+
+            .features_title{
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 25px;  
+            }
+
+            .features_desc{
+                width: 75%;
+                text-align: center;
+            }
+
+             .features_with_img{
+                height: 415px;
+                position: relative;
+
+                img{
+                    width: 100%;
+                    position: absolute;
+                    bottom: -4%;
+                }
+        }
+    }
+}
