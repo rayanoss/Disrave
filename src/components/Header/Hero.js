@@ -1,20 +1,22 @@
 import React from 'react';
-import bgHeader from "../../asset/wolf-street-header.jpg";
 import BlueBtn from '../BlueBtn';
 import WhiteBtn from '../WhiteBtn';
-
+import imgHeader from '../../asset/mia-wallace.png';
 const Hero = () => {
     return (
         <div className='hero_container'>
-            <img src={bgHeader} alt="" className='bg_header_hero'/>
-
-            <div className='hero_text_btn'>
-                <h1 className='hero_title'>DISRAVE</h1>
-                <p className='hero_p'>Ta salle de cinéma depuis Discord</p>
+            <div className='text_btn_container'>
+                <div className="buble-bg"></div>
+                <h1>TON CINEMA DEPUIS <span style={{color: "#5865F2"}}>DISCORD</span></h1> 
+                <p>Retrouve tes films préférés tous les samedis soirs dans le channel film</p>
                 <div className="btn_hero_container">
                 <BlueBtn content="S'inscrire"/>
                 <WhiteBtn content="Liste des films"/>
                 </div>
+            </div>
+            <div className='right-side-container'>
+                <img src={imgHeader} alt="" />
+                <div className="buble-bg"></div>
             </div>
         </div>
     );

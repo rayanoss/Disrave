@@ -1,40 +1,92 @@
 .features_section{
-    background: rgb(255, 255, 255);
-    .features_container{
-        width: 95%;
-        padding-top: 50px;
-        display: flex;
-        align-items: center;
-        margin: auto;
+    height: 465px;
+    position: relative; 
 
-        .features{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-family: 'Poppins', sans-serif;
-            color: #23272A;
-            }
+    .background-section{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 50%;
+        width: 60%;
+        border-radius: 50px;
+        background: #222222; 
 
-            .features_title{
-                text-transform: uppercase;
-                font-weight: 600;
-                font-size: 25px;  
-            }
+        .features-container{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
 
-            .features_desc{
-                width: 75%;
-                text-align: center;
-            }
-
-             .features_with_img{
-                height: 415px;
-                position: relative;
+            .feature-iphone-title{
+                height: 410px;
+                width: 220px;
+                position: absolute;
+                left: 17%;
+                bottom: 50%;
+                transform: translateY(50%) rotateZ(-2.5deg);
 
                 img{
+                    height: 100%;
                     width: 100%;
+                } 
+
+                .features-title{
+                    color: #b3b3b3;
                     position: absolute;
-                    bottom: -4%;
+                    width: 80%;
+                    font-weight: 600;
+                    cursor: pointer;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    background: transparent;
+                    transition: all 0.3s ease;
+
+                    svg{
+                        transform: rotateZ(-2.5deg);
+                    }
                 }
+               
+                .feature-title{
+                    padding: 5px 1px;
+                    margin: 40px 0px;
+                    background: transparent;
+                    transition: all 0.3s ease;
+                }
+
+                .feature-title.active{
+                    color: white;
+                    background: rgb(95, 95, 95);
+                    border-radius: 3px;
+                }
+
+                p:hover{
+                    border-radius: 3px;
+                    background: rgb(95, 95, 95);
+                    transition: all 0.3s ease;
+                    color: rgb(206, 206, 206);
+                }
+            }
+
+            .feature-desc{
+                position: absolute;
+                left: 40%;
+                top: 20%;
+                width: 39%;
+                color: white;
+    
+                h3{
+                    color: #99a1ff;
+                    text-transform: uppercase;
+                    font-size: 30px;
+                    margin-bottom: 5px;
+                }
+            }
         }
     }
+   
 }
+

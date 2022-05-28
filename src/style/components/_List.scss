@@ -1,0 +1,54 @@
+.list-movies-section{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: auto;
+
+    .list-movies{
+        display: flex;
+        flex-wrap: wrap;
+        width: 1000px;
+
+        .movie-item{
+            cursor: pointer;
+            margin: 15px;
+            width: 200px;
+
+            img{
+                height: 300px;
+            }
+
+            p{
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.modal-container{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: #23272abb;
+
+    .movie-info{
+        height: 300px;
+        width: 700px;
+        background: #23272a;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        display: flex;
+        color: white;
+        align-items: center;
+    }
+
+    img{
+        height: 100%;
+    }
+
+    .text{
+        margin-left: 20px;
+    }
+}
