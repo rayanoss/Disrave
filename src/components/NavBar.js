@@ -1,4 +1,5 @@
 import React from 'react';
+import BlueBtn from './BlueBtn';
 
 const NavBar = () => {
     return (
@@ -10,6 +11,7 @@ const NavBar = () => {
                 <li className='link'><a href="#id">Liste des films</a></li>
                 <li className='link'><a href="#id">Proposition</a></li>
             </ul>
+            <BlueBtn content={"Connexion"}/>
         </nav>
     );
 };

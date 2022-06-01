@@ -1,7 +1,7 @@
 import React from 'react';
-const BlueBtn = ({content}) => {
+const BlueBtn = ({content, action}) => {
     return (
-        <button className='blueBtn'>{content}</button>
+        <button className='blueBtn' onClick={action}>{content}</button>
     );
 };
 

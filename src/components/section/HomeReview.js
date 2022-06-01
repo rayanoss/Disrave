@@ -53,13 +53,12 @@ const HomeReview = () => {
 
     return (
        <section className='review_section'>
-           <div className="review_container">
-
-                <div className='review_header'>
+            <div className='section-header'>
                     <h3 className='title'>Témoignages</h3>
                     <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisi mauris, porta id congue vitae, rhoncus vitae odio.</p>
                 </div>
 
+           <div className="review_container">
                 <div className="review">
                     <IoIosArrowBack className='left_arrow'onClick={handleLeftReview}/>
                     <IoIosArrowForward className='right_arrow'onClick={handleRightReview}/>

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import ReactPlayer from 'react-player';
 import axios from 'axios';
 
-const Trailer = ({movie}) => {
+const Trailer = ({setWatchTrailer}) => {
     const [key, setKey] = useState(null)
     const url = "https://www.youtube.com/watch?v=" + key;
     
@@ -15,10 +15,8 @@ const Trailer = ({movie}) => {
         fetchDataMovie();
     }, [])
     return (
-        <div className='trailer-section' style={{width: '100%', marginTop: '50px'}}>
-            <h3 className='trailer-section-title'>TRAILER</h3>
-            <ReactPlayer url={url} controls={true} width={'100%'} height={'600px'}/>
-            <button className='btn-download-movie'>Télécharger le film</button>
+        <div className='trailer-container' onClick={() => setWatchTrailer(false)}>
+            <ReactPlayer url={url} controls={true} width={'60%'} height={'60%'}/>
         </div>
     );
 };

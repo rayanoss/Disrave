@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import ModalInfo from './ModalInfo';
+import {AiFillStar} from 'react-icons/ai';
+import {CgMoreO} from 'react-icons/cg';
 const List = () => {
+    
     const [listMovies, setListMovies] = useState([]); 
     const [movieInfo, setMovieInfo] = useState(false);
     const [movieId, setMovieId] = useState(null)
@@ -22,8 +25,12 @@ const List = () => {
             {movieInfo ? <ModalInfo movie={listMovies[movieId]} /> : null}
             <ul className='list-movies'>
                 {listMovies.map((movie, index) => 
-                    <li key={movie.id} className="movie-item" onClick={() => handleClickMovieInfo(index)}>
+                    <li key={movie.id} className="movie-item" onClick={() => handleClickMovieInfo(index)}>   
+                        <div className="image-container">
                         <img src={"https://image.tmdb.org/t/p/w600_and_h900_bestv2" + movie.poster_path} alt="" />
+                        <p className='movie-vote-average'><AiFillStar/> {movie.vote_average}</p>
+                        <CgMoreO />
+                        </div>
                         <p>{movie.original_title}</p>
                     </li>    
                 )}

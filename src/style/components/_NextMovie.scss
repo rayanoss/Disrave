@@ -1,64 +1,68 @@
 .next-movie-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 60%;
-    margin: auto;
     position: relative;
-    
-    .movie-info{
-        display: flex;
-        
-        margin: auto;
-        align-items: flex-end;
-        justify-content: center;
-
-        img{
-            height: 200px;
-        }
-
-        .info-text{
-            margin-left: 25px;
-            
-            p{
-                margin: 5px 0px;
-            }
-
-            .vote-average{
-                margin: 0px 5px;
-                background: #5865F2;
-                color: white;
-                border-radius: 20px;
-                padding: 0px 10px;
-                text-transform: uppercase;
-                font-size: 12px;
-                width: 60px;
-                text-align: center;
-            }
-        }
-    }
-}
-
-.trailer-section{
-    width: 100%;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    .trailer-section-title{
-        font-size: 30px;
-        margin: 20px 0px;
+    height: 100vh;
+    .section-background{
+        object-fit: cover;
+        height: 100%;
         width: 100%;
     }
 
-    .btn-download-movie{
-        margin: 10px 10px;
-        background: #5865F2;
-        color: white;
-        font-size: 20px;
-        border-radius: 20px;
-        text-transform: uppercase;
-        padding: 10px 15px;
-    }
+   
+}
+
+.movie-info-container{
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        z-index: 1;
+        width: 30%;
+        text-align: justify;
+        .movie-title, .movie-tagline, .movie-extra, .movie-overview {
+            color: white;
+        }
+        .movie-title{
+            text-align: left;
+            font-size: 65px;
+            color: #ededed;
+            letter-spacing: -0.02em;
+        }
+
+        .movie-tagline{
+            color: #ededed;
+            font-size: 25px;
+        }
+
+        .movie-extra{
+            margin: 10px 0px;
+        }
+
+        .movie-overview{
+            margin-bottom: 10px;
+        }
+        
+}
+
+
+.trailer-container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.904);
+    cursor: pointer;
+}
+
+.next-movie-section::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
 }

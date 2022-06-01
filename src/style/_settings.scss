@@ -40,3 +40,20 @@ h1{
     font-size: 35px;
     margin: 60px 0px 30px 0px;
 }
+
+.section-header{
+    width: 60%;
+    text-align: center;
+    margin: 0px auto 20px auto;
+
+    .title{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 25px;
+    color: #222222;
+    }
+
+    p{
+        color: #404040;
+    }
+}

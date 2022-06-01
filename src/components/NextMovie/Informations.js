@@ -1,15 +1,25 @@
 import React from 'react';
-
-const Informations = ({movie}) => {
-    console.log(movie)
+import WhiteBtn from "../WhiteBtn"; 
+import BlueBtn from "../BlueBtn"; 
+const Informations = ({movie, setWatchTrailer}) => {
     return (
-        <div className='movie-info'>
-            <img src={movie.poster} alt="" />
-            <div className="info-text">
-                <p style={{fontWeight: "bold", fontSize: "20px"}}>{movie.title}</p>
-                <p className='vote-average'>{movie.vote_average} - 10</p>
-                <p>{movie.overview}</p>
-            </div>
+        <div className='movie-info-container'>
+               <h1 className='movie-title'>{movie.title}</h1>
+               <p className='movie-tagline'>{movie.tagline}</p>
+               <p className='movie-extra'>{movie.vote_average}/10 • 
+               {movie.genres ? movie.genres.map((genre, index) => {
+                    if(index === movie.genres.length - 1){
+                    return genre.name ;
+                  }
+                  if(index === 0){
+                    return " " + genre.name + ", ";
+                  }
+                  return genre.name + ", "; 
+                  
+               }) : null}</p>
+               <p className='movie-overview'>{(movie.overview) ? movie.overview.slice(0, 200) + '...' : null}</p>
+               <BlueBtn content={"Voir le trailer"} action={(e) => setWatchTrailer(true)}/>
+               <WhiteBtn content={"Téléchager le film"}/>
         </div>
     );
 };
