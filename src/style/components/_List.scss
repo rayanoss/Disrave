@@ -38,7 +38,7 @@
     z-index: 5;
 
     .movie-info{
-        height: 300px;
+        height: auto;
         width: 700px;
         background: #222222;
         top: 50%;
@@ -46,6 +46,7 @@
         position: absolute;
         transform: translate(-50%, -50%);
         display: flex;
+        flex-direction: column;
         color: white;
         align-items: center;
 
@@ -55,10 +56,6 @@
             font-size: 20px;
             color: #f9f9f9;
         }
-    }
-
-    img{
-        height: 100%;
     }
 
     .text{
@@ -84,7 +81,7 @@
     
     .movie-vote-average{
         position: absolute;
-        z-index: 4;
+        z-index: 3;
         color: white;
         bottom: 8%;
         right: 5%;
@@ -94,6 +91,14 @@
         align-items: center;
         padding: 0px 10px;
         font-size: 12px;
+
+        svg{
+            opacity: 1;
+            position: initial;
+            transform: none;
+            font-size: 10px;
+            margin-right: 5px;
+        }
     }
 
     svg{
@@ -103,7 +108,7 @@
         transform: translate(-50%, -50%);
         color: white;
         font-size: 50px;
-        z-index: 3;
+        z-index: 5;
         opacity: 0;
         transition: all 0.3s ease;
     }
@@ -136,6 +141,6 @@
     height: 100%;
     width: 100%;
     border-radius: 10px;
-    z-index: 2;
+    z-index: 4;
     transition: all 0.3s ease;
 }
