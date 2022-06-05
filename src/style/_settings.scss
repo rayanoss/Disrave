@@ -57,3 +57,12 @@ h1{
         color: #404040;
     }
 }
+
+.noscroll{
+    overflow: hidden;
+}
+
+input:focus{
+    border: none;
+    outline: none;
+}

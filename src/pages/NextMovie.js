@@ -2,11 +2,13 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Informations from '../components/NextMovie/Informations';
 import Trailer from '../components/NextMovie/Trailer';
+import ReactPlayer from 'react-player';
+
 
 const NextMovie = () => {
     const [movie, setMovie] = useState({})
     const [watchTrailer, setWatchTrailer] = useState(false)
-    console.log(watchTrailer)
+    const [url, setUrl] = useState("")
     useEffect(() => {
         const fetchDataMovie = async () => {
             const res = await axios.get("https://api.themoviedb.org/3/movie/49026?api_key=9abf0a996efeefc2cf9e9ab4f02bead8&language=fr-FR&append_to_response=videos");
@@ -15,14 +17,23 @@ const NextMovie = () => {
             const trailer = res.data.videos.results[res.data.videos.results.length - 1];
             const data = res.data
             setMovie({...data, poster, trailer, backgroundPoster});
+           
         } 
+
+        const fetchTrailer = async () => {
+            const res = await axios.get("https://api.themoviedb.org/3/movie/49026/videos?api_key=9abf0a996efeefc2cf9e9ab4f02bead8&language=fr-FR");
+            setUrl("https://www.youtube.com/watch?v=" + res.data.results[res.data.results.length - 1].key)
+        } 
+
         fetchDataMovie();
+        fetchTrailer();
     }, [])
+
     return (
-        <section className='next-movie-section'>
-            <img src={movie.backgroundPoster} alt="" className='section-background'/>
+        <section className='next-movie-section' style={{overflow: "hidden"}}>
+            <ReactPlayer url={url} playing={true} loop={true} muted={true} controls={false} width={'100%'} height={'110%'}/>
             <Informations movie={movie} setWatchTrailer={setWatchTrailer} watchTrailer={watchTrailer}/>
-            {(watchTrailer) ? <Trailer setWatchTrailer={setWatchTrailer}/> : null}
+            {(watchTrailer) ? <Trailer setWatchTrailer={setWatchTrailer} url={url}/> : null}
         </section>
     );
 };
