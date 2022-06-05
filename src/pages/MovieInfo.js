@@ -2,6 +2,26 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import ReactPlayer from 'react-player';
 import { useParams } from 'react-router-dom';
+import {BiTimeFive} from 'react-icons/bi';
+import {AiFillStar} from 'react-icons/ai'; 
+import {FaDiscord} from 'react-icons/fa'; 
+
+const review = [{
+    name: 'rayane', 
+    review: 'lorem ipsum lalilalalao prout'
+},
+{
+    name: 'rayane', 
+    review: 'lorem ipsum lalilalalao prout'
+},
+{
+    name: 'rayane', 
+    review: 'lorem ipsum lalilalalao prout'
+}, 
+{
+    name: 'rayane', 
+    review: 'lorem ipsum lalilalalao prout'
+}]
 
 const MovieInfo = () => {
     const [movie, setMovie] = useState({})
@@ -9,6 +29,11 @@ const MovieInfo = () => {
     const params = useParams(); 
     const movieId = params.id; 
    
+    function convertTime(minutes){
+        const h = Math.floor(minutes/60);
+        const m = minutes%60; 
+        return (h + 'h ' + m + 'min').toString()
+    }
     useEffect(() => {
         const fetchDataMovie = async () => {
             const res = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=9abf0a996efeefc2cf9e9ab4f02bead8&language=fr-FR&append_to_response=videos`);
@@ -47,7 +72,40 @@ const MovieInfo = () => {
                     </div>     
                 </div>   
             </div>
-            <ReactPlayer url={url} controls={true} width={'50%'} height={'50%'}/>
+            
+            <div className='movie-key-banner'>
+                <div className='item'>
+                    <BiTimeFive />
+                    <p className='title'>Durée</p>
+                    <p className='runtime-value'>{convertTime(movie.runtime)}</p>
+                </div>
+                <div className='item'>
+                    <AiFillStar />
+                    <p className='title'>Avis public</p>
+                    <p className='public-value'>{movie.vote_average}/10</p>
+                </div>
+                <div className='item'>
+                    <FaDiscord />
+                    <p className='title'>Avis Disrave</p>
+                    <p className='disrave-value'>?/10</p>
+                </div>
+            </div>
+
+            <div className='movie-trailer-container'>
+            <h3>Trailer</h3>
+            <ReactPlayer url={url} controls={true} width={'100%'} height={'500px'}/>
+            </div>
+           
+           <div className='review-container'>
+               <ul>
+                   {review.map((rev, index) => (
+                       <li key={index}>
+                           <p>{rev.name}</p>
+                           <p>{rev.review}</p>
+                       </li>
+                   ))}
+               </ul>
+           </div>
         </section>
     );
 };
