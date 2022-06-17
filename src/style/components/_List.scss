@@ -1,16 +1,11 @@
 .list-movies-section{
-    display: flex;
-    width: 1140px;
-    justify-content: center;
+    max-width: 1140px;
     margin: auto;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
+    width: 90%;
 
-    header{
-        margin: 200px 0px 30px 0px;
+    header{ 
         text-align: center;
-        width: 70%;
+        width: 100%;
         
         h1{
             color: #222222;
@@ -18,22 +13,45 @@
         }
     
         P{
+            width: 75%;
             color: #404040;
+            margin: auto;
         }
+    }
+
+    
+}
+
+.filter-list-container{
+    display: flex;
+    min-height: 800px;
+    width: 90%;
+    margin: auto;
+
+    @media screen and (min-width: 0px) and (max-width: 768px) {
+        display: block;
     }
 
     .list-movies{
         display: flex;
         flex-wrap: wrap;
-        width: 80%;
+        max-width: 760px;
+        
         margin: auto;
 
+        @media screen and (min-width: 0px) and (max-width: 768px) {
+            width: 100%;
+            justify-content: center;
+        }
 
+        
+        
         .movie-item{
             cursor: pointer;
             margin: 15px;
             width: 160px;
             text-align: center;
+            
             img{
                 border-radius: 10px;
                 width: 100%;
@@ -46,62 +64,7 @@
             }
 
         }
-    }
-}
-
-.movie-info{
-    height: auto;
-    min-height: 800px;
-    width: 700px;
-    background: #0e0e0e;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    color: white;
-    align-items: center;
-    border-radius: 10px;
-    overflow: hidden;
-    z-index: 7;
-    animation: fadeIn 0.5s ease;
-    
-    .movie-title{
-        font-family: "Inter", sans-serif;
-        font-weight: 500;
-        font-size: 20px;
-        color: #f9f9f9;
-    }
-
-    .text{
-        margin-left: 20px;
-        margin-top: 20px;
-        width: 90%;
-    }
-
-    .list-genres{
-        display: flex;
-
-        .genre-item{
-            margin: 10px 10px 10px 0px;
-            font-size: 12px;
-            background: #5865F2;
-            border-radius: 10px;
-            padding: 1px 10px;
-        }
-    }
-}
-.modal-container{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background: #23272abb;
-    z-index: 6;
-    cursor: pointer;
-    left: 0;
-    top: 0;
-    animation: fadeIn 0.5s ease;
+    }    
 }
 
 .image-container{
@@ -176,7 +139,82 @@
 
 
 
+.list-movie-user-input{
+    margin-top: 15px;
+    background: #121212;
+    width: 20%;
+    height: 300px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
+    @media screen and (min-width: 700px) and (max-width: 768px) {
+        background: none;
+        margin: 15px auto;
+        flex-direction: row;
+        width: 90%;
+        height: auto;
+    }
+
+    @media screen and (min-width: 0px) and (max-width: 700px) {
+        background: none;
+        margin: 15px auto;
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+
+    .title{
+        text-align: left;
+        color: #f9f9f9;
+        width: 85%;
+        font-size: 20px;
+        text-transform: uppercase;
+        @media screen and (min-width: 0px) and (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .search-input{
+        background: #222222;
+        color: white;
+        height: 45px;
+        border: 1px solid#f9f9f929;
+        padding: 8px;
+    }
+
+    .search-input::placeholder{
+        color: rgba(255, 255, 255, 0.479);
+    }
+    
+    .genres-select, .sort-select, input{
+        font-size: 15px;
+        width: 85%;
+        margin-top: 20px;
+
+        @media screen and (min-width: 0px) and (max-width: 768px) {
+            width: 100%;
+            margin: 20px 10px;
+            z-index: 5;
+        }
+
+        @media screen and (min-width: 0px) and (max-width: 700px) {
+            width: 100%;
+            margin: 5px 0px;
+            .css-j38xwb-placeholder{
+                line-height: 40px;
+            }
+        }
+        
+    }
+
+    .genres-select{
+        z-index: 5;
+    }
+
+}
 
 @keyframes fadeIn {
     0%{
@@ -189,58 +227,3 @@
     
 }
 
-.filter-list-container{
-    display: flex;
-    width: 1140px;
-    min-height: 800px;
-
-    .title{
-        text-align: left;
-        color: #f9f9f9;
-        width: 85%;
-        font-size: 20px;
-        text-transform: uppercase;
-    }
-    
-    .list-movie-user-input{
-        margin-top: 15px;
-        background: #121212;
-        width: 20%;
-        height: 300px;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
-    
-    
-        .search-input{
-            background: #222222;
-            color: white;
-            height: 43px;
-            border: 1px solid#f9f9f929;
-            padding: 8px;
-        }
-
-        .search-input::placeholder{
-            color: rgba(255, 255, 255, 0.479);
-        }
-        
-        .genres-select, .sort-select, input{
-            font-size: 15px;
-            width: 85%;
-            margin-top: 20px;
-            
-        }
-
-        .genres-select{
-            z-index: 5;
-        }
-   
-    }
-
-    .list{
-        width: 100%;
-    }
-}

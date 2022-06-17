@@ -48,6 +48,7 @@ const MovieList = ({listMovies, handleClickMovieInfo, searchMovie, searchByCateo
                     <CgMoreO />
                     </div>
                     <p>{movie.original_title}</p>
+                      
                 </li>    
             )
            return array

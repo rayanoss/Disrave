@@ -1,4 +1,4 @@
-.blueBtn{
+.blueBtn, .blueBtn.disable{
     margin: 10px 10px 10px 0px;
     background: #5865F2;
     color: white;
@@ -7,6 +7,47 @@
     padding: 10px 20px;
     border-radius: 20px;
     cursor: pointer;
+    position: relative;
+}
+
+.blueBtn .tooltiptext{
+    display: none;
+}
+
+.blueBtn.disable{
+    cursor: not-allowed; 
+}
+
+.blueBtn.disable .tooltiptext{
+    display: none;
+    width: 120px;
+    background-color: #222222;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 130%;
+    left: 50%;
+    margin-left: -60px;
+    font-size: 9px;
+    font-weight: normal;
+}
+
+.blueBtn.disable .tooltiptext::after {
+    content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #222222 transparent;
+  }
+
+.blueBtn.disable:hover .tooltiptext{
+    display: block;
 }
 
 .whiteBtn{

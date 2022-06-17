@@ -10,13 +10,15 @@ import List from './pages/List';
 import {useRef} from 'react';
 import Request from './pages/Request';
 import MovieInfo from './pages/MovieInfo';
+import Connexion from './pages/Connexion';
+import Footer from './components/Footer';
 
 function App() {
   const body = useRef(null);
 
   return (
     <div className="App" ref={body}>
-      <NavBar />
+      <NavBar body={body}/>
       <BrowserRouter>
         <Routes>
           <Route path="/">
@@ -25,9 +27,11 @@ function App() {
             <Route path='liste-films' element={<List body={body}/>} />
             <Route path='film/:id' element={<MovieInfo />} />
             <Route path='ajouter-un-film' element={<Request />} />
+            <Route path='login' element={<Connexion />} />
           </Route>
         </Routes>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }

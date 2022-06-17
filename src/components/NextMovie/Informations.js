@@ -1,7 +1,7 @@
 import React from 'react';
 import WhiteBtn from "../WhiteBtn"; 
 import BlueBtn from "../BlueBtn"; 
-const Informations = ({movie, setWatchTrailer}) => {
+const Informations = ({movie, setWatchTrailer, currentUser, setNextMovie}) => {
     return (
         <div className='movie-info-container'>
                <h1 className='movie-title'>{movie.title}</h1>
@@ -20,6 +20,7 @@ const Informations = ({movie, setWatchTrailer}) => {
                <p className='movie-overview'>{(movie.overview) ? movie.overview.slice(0, 200) + '...' : null}</p>
                <BlueBtn content={"Voir le trailer"} action={(e) => setWatchTrailer(true)}/>
                <WhiteBtn content={"Téléchager le film"}/>
+               {(currentUser.admin) ? <BlueBtn content={"Modifier le prochain film"} action={(e) => setNextMovie(true)}/> : null}
         </div>
     );
 };

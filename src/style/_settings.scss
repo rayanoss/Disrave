@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+$bg-dark-color: #222222; 
+$title-dark-color: #222222; 
+$text-dark-color: #404040; 
+$text-blue-color: #99a1ff; 
+$text-white-color: #f9f9f9; 
+
 *{
     margin: 0;
     padding: 0;
@@ -45,16 +51,19 @@ h1{
     width: 60%;
     text-align: center;
     margin: 0px auto 20px auto;
+    @media screen and (min-width: 0px) and (max-width: 850px){
+        width: 95%;
+    }
 
     .title{
     text-transform: uppercase;
     font-weight: 600;
     font-size: 25px;
-    color: #222222;
+    color: $title-dark-color;
     }
 
     p{
-        color: #404040;
+        color: $text-dark-color;
     }
 }
 
@@ -65,4 +74,11 @@ h1{
 input:focus{
     border: none;
     outline: none;
+}
+
+%position-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }

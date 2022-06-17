@@ -5,47 +5,88 @@
     align-items: center;
     justify-content: center;
     height: 75vh;
-    background: #222222;
-    padding: 50px 0px;
-
+    background: $bg-dark-color;
+    overflow: hidden;
+    
    .text_btn_container{
-        height: 600px;
-        width: 500px;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        width: 500px;
+        height: 500px;
         position: relative;
-        text-align: left;
-
         .buble-bg{
             @extend %buble;
-            top: 10%;
-            left: -9%;
+            top: 0%;
+            left: -10%;
         }
+
+        @media screen and (min-width: 320px) and (max-width: 1024px){
+            text-align: center;
+            width: 100%;
+            align-items: center;
+            height: auto;
+        }
+
+      
 
        h1{
         font-size: 60px;
         width: 510px;
         letter-spacing: -0.02em;
+
+        @media screen and (min-width: 615px) and (max-width: 768px){
+            width: 90%;
+            font-size: 45px;
+        }
+
+        @media screen and (min-width: 320px) and (max-width: 615px){
+            width: 100%;
+            font-size: 25px;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1024px){
+            font-size: 35px;
+        }
        }
 
        p{
         color: #ffffff;
-        font-weight: bold;
         width: 80%;  
         margin: 15px 0px;  
        }
    }
 
    .right-side-container{
-    height: 600px;
-    width: 600px;
+    height: 500px;
+    width: 500px;
     position: relative;
+    display: flex;
+    align-items: center;
+
+    @media screen and (min-width: 0px) and (max-width: 768px){
+        width: 250px;
+        height: 250px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1024px){
+        width: 300px;
+        height: 300px;
+    }
+
+    img{
+        width: 100%
+    }
 
     .buble-bg{
        @extend %buble;
         bottom: -25%;
-        right: 0;
+        right: -15%;
+
+        @media screen and (min-width: 0px) and (max-width: 1024px){
+            right: -100%;
+            top: -90%;
+        }
     }
     
    }
@@ -58,5 +99,11 @@
     width: 250px;
     position: absolute;
     border-radius: 100%;
-    background: linear-gradient(40deg, rgba(35, 39, 42, 0) 0%, rgba(35, 39, 42, 0.05) 80%, rgba(35, 39, 42, 0.09) 100%);
-  }
+    background: linear-gradient(40deg, rgba(171, 172, 173, 0) 0%, rgba(171, 172, 173, 0.05) 80%, rgba(171, 172, 173, 0.09) 100%);
+}
+
+@media screen and (max-width: 1024px) {
+    .hero_container{
+     flex-direction: column-reverse;
+    }    
+}

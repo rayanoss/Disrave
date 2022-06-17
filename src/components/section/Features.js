@@ -1,12 +1,13 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect} from 'react';
 import iphoneFeatures from "../../asset/iphone-features.png";
+import ipadFeatures from "../../asset/ipad-features.png";
 import {FaHashtag} from 'react-icons/fa';
 
 const Features = () => {
     const [index, setIndex] = useState(0); 
     const [stop, setStop] = useState(false);
     let animationIndex = 0; 
-  
+
     useEffect(() => {
         handleClickFeatures(index)
         const interval = setInterval(() => {
@@ -60,7 +61,8 @@ const Features = () => {
                 <div className="features-container">
 
                     <div className="feature-iphone-title">
-                        <img src={iphoneFeatures} alt="" />
+                        <img src={iphoneFeatures} alt="" className='iphone-features'/>
+                        <img src={ipadFeatures} alt="" className='ipad-features'/>
                         <div className="features-title" ref={featuresDiv}>
                             <p className='feature-title' onClick={() => {
                             handleClickFeatures(0)
@@ -76,7 +78,7 @@ const Features = () => {
                    
                     {features.map((feature, key) => {
                         if(key === index) return (
-                            <div className={"feature-desc " + features[index].className} ref={featureDetails} >
+                            <div key={key} className={"feature-desc " + features[index].className} ref={featureDetails} >
                                 <h3>{features[index].title}</h3>
                                 <p>{features[index].desc}</p>
                             </div>

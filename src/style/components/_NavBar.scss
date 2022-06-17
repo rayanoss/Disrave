@@ -2,20 +2,32 @@
 @import '../settings';
 
 .navbar{
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
     display: flex;
     width: 100%;
     height: 50px;
     justify-content: space-between;
     align-items: center;
-    background: #ffffff;
+    background: #ededed;
     padding: 0px 50px;
     z-index: 1;
+
+
+    .blueBtn{
+        margin: 0px;
+        z-index: 0;
+        padding: 8px 15px;
+    }
 
     .navbar_title{
         text-transform: uppercase;
         color: #222222;
         font-size: 25px;
-        font-family: 'Acme', sans-serif;
+        font-weight: bold;
+        font-family: 'Inter', sans-serif;
+        z-index: 5;
     }
 
     .navbar_links{
@@ -28,6 +40,61 @@
         .link{
             margin: 0px 10px;
             font-family: 'Poppins', sans-serif;
+
+            a{
+                color: #222222;
+            }
+        }
+    }
+}
+
+.hamburger-navbar{
+    @media screen and (min-width: 769px) {
+        display: none;
+    }
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 10;
+
+    .top-navbar{
+        display: flex;
+        align-items: center;
+        height: 45px;
+        background: #ededed;
+        padding: 10px;
+
+        svg{
+            font-size: 25px;
+        }
+
+        .navbar_title{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 25px;
+        }
+    }
+
+    ul{
+        height: 100%;
+        width: 200px;
+        background: #ededed;
+        transition: all 0.5s ease-in;
+        position: absolute;
+        z-index: 5;
+        transform: translateX(-100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        li{
+            padding: 10px 5px;
+            margin: 15px 0px;
+            font-family: 'Poppins', sans-serif;
+            
 
             a{
                 color: #222222;

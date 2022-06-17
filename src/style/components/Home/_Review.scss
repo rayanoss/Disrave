@@ -1,18 +1,20 @@
 .review_section{
-    height: 465px;
     display: flex;
     flex-direction: column;
-    width: 1140px;
+    width: 90%;
     margin: 50px auto;
-        
+    max-width: 1140px;
+
     .review_container{
-        margin: auto;
         .review{
             position: relative;
             overflow: hidden;
             width: 650px; 
             height: 450px;
             margin: auto;
+            @media screen and (min-width: 0px) and (max-width: 768px) {
+                width: 100%;
+            }
             .review_list{
                 display: flex;
                 position: absolute;
@@ -20,6 +22,9 @@
                 left: 0%;
                 height: 100%;
                 align-items: center;
+                @media screen and (min-width: 0px) and (max-width: 768px) {
+                    width: 300%;
+                }
                  
                 .review_item{
                 width: 650px; 
@@ -29,45 +34,57 @@
                 justify-content: center;
                 align-items: center;
                 border-radius: 10px;
+
+                @media screen and (min-width: 0px) and (max-width: 768px) {
+                    max-width: 650px;
+                    width: 100%;
+                  }
      
                     img{
                         position: absolute;
-                        top: 5%;
+                        top: 10%;
                         border-radius: 50%;
                         object-fit: cover;
-                        height: 150px;
-                        width: 150px;
-                        box-shadow: 0px 0px 10px 0px #00000050;
+                        height: 115px;
+                        width: 115px;
+                        box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 31%);
+                        @media screen and (min-width: 0px) and (max-width: 768px) {
+                            height: 100px;
+                            width: 100px;
+                        }
                     }
          
-                    .name_film_note{
-                    display: flex;
-                    flex-direction: column;
-                    }
-                
+                    
                     .review_text{
                         width: 75%;
                         text-align: center;
-                        margin-top: 35px;
+                        margin-top: 15px;
                         color: #EDEDED;
+
+                        @media screen and (min-width: 0px) and (max-width: 768px) {
+                           margin-top: 10px;
+                        }
 
                         .username{
                             font-weight: 900;
                             font-size: 20px;
+                            width: auto;
                          }
 
                          .user_review_note{
                             background: #5865F2;
-                            color: white;
                             border-radius: 20px;
                             width: 110px;
-                            justify-content: center;
                             font-size: 13px;
-                            margin: 0px auto 15px auto;
+                            margin: 5px auto;
                          }
          
                         .user_review_text{
                             font-size: 16px;
+
+                            @media screen and (min-width: 0px) and (max-width: 768px) {
+                                font-size: 13px;
+                            }
                         }
                     }
                 }
@@ -91,7 +108,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 73%;
+    top: 72%;
 
     .counter.active{
         background: #ffffff; 

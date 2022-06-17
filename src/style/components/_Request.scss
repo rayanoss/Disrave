@@ -42,37 +42,39 @@
    
 }
 
-form{
-    position: absolute;
-    right: 2%;
-    height: 250px;
-    width: 45%;
-    background: #0c0c0c;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 10px;
-    border: 1px solid #ffffff50;
-
-    .input-list{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 100%; 
-        justify-content: center;
+.movie-request-section{
+    form{
+        position: absolute;
+        right: 2%;
+        height: 250px;
+        width: 45%;
+        background: #0c0c0c;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 10px;
+        border: 1px solid #ffffff50;
     
-        .blueBtn{
-            padding: 5px 20px;
-            width: 90%;
-            border-radius: 0px;
-        }
-        input{
-            font-size: 15px;
-            background: #222222;
-            border: none;
-            padding: 5px;
-            color: white;
-            width: 90%;
-            margin: 5px 0px;
+        .input-list{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%; 
+            justify-content: center;
+        
+            .blueBtn{
+                padding: 5px 20px;
+                width: 90%;
+                border-radius: 0px;
+            }
+            input{
+                font-size: 15px;
+                background: #222222;
+                border: none;
+                padding: 5px;
+                color: white;
+                width: 90%;
+                margin: 5px 0px;
+            }
         }
     }
 }
